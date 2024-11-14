@@ -10,23 +10,23 @@ This project showcases a comprehensive analysis of Adidas sales data, leveraging
 - [Data Cleaning with Excel Power Query](#data-cleaning-with-excel-power-query)
   - [Steps](#steps)
 - [SQL Server Analysis](#sql-server-analysis)
-  - [Key SQL Queries](#key-sql-queries)
+    - [Key SQL Queries](#key-sql-queries)
     - [Top Performing Products](#1-top-performing-products)
     - [Monthly Sales Trends](#2-monthly-sales-trends)
     - [Regional Performance](#3-regional-performance)
 - [Power BI Visualization](#power-bi-visualization)
-  - [Key Visualizations](#key-visualizations)
-- [Key Findings](#key-findings)
-- [Project Files](#project-files)
-- [Conclusion](#conclusion)
+    - [Key Visualizations](#key-visualizations)
+    - [Key Findings](#key-findings)
+    - [Project Files](#project-files)
+    - [Conclusion](#conclusion)
 
 ---
 
 ## Project Overview
 
-- **Data Source**: Adidas Sales Dataset
-- **Tools**: Excel Power Query, SQL Server, Power BI
-- **Objectives**:
+- Data Source: Adidas Sales Dataset(Kaggle)
+- Tools: Excel Power Query, SQL Server, Power BI
+- Objectives:
   - Clean and transform raw sales data for analysis
   - Conduct time-based and product-based sales analysis
   - Visualize trends for actionable insights across key business areas
@@ -38,19 +38,10 @@ This project showcases a comprehensive analysis of Adidas sales data, leveraging
 The data was cleaned and transformed in Excel Power Query to ensure consistency and prepare for analysis.
 
 ### Steps
-1. **Removed Duplicates**: Ensured data integrity by eliminating duplicate entries.
-2. **Handled Missing Values**: Applied fill-down and replacement methods to manage null values.
-3. **Filtered Columns**: Removed non-essential columns for a streamlined dataset.
-4. **Standardized Column Names**: Renamed columns for compatibility across tools.
-5. **Unpivoted Data**: Transformed month-based columns to facilitate time-based analysis.
-6. **Created Calculated Columns**: Generated custom columns for profit margin and quarter extraction.
-
-*Example Power Query Step for Unpivoting*:
-   ```plaintext
-   Transform > Unpivot Columns
-   ```
-
-7. **Export to SQL Server**: Saved the cleaned data in CSV format and loaded it into SQL Server for further analysis.
+1. Removed Duplicates: Ensured data integrity by eliminating duplicate entries.
+3. Filtered Columns: Removed non-essential columns for a streamlined dataset.
+4. Standardized Column Names: Renamed columns for compatibility across tools and Used first row as header
+5. Export to SQL Server: Saved the cleaned data in Excel format and loaded it into SQL Server for further analysis.
 
 ---
 
@@ -61,30 +52,25 @@ Using SQL Server, I performed data analysis to uncover insights on sales trends,
 ### Key SQL Queries
 
 #### 1. Top Performing Products
-   ```sql
-   SELECT 
-       Product,
-       SUM(Sales) AS Total_Sales,
-       SUM(Operating_Profit) AS Total_Profit
-   FROM 
-       AdidasSales
-   GROUP BY 
-       Product
-   ORDER BY 
-       Total_Sales DESC;
-   ```
-
+ SELECT
+    Product,
+    SUM([Units Sold]) AS Total_Units_Sold
+FROM 
+    ['Data_Sales _Adidas]
+GROUP BY 
+    Product
+ORDER BY 
+    Total_Units_Sold DESC;
+```
 #### 2. Monthly Sales Trends
-   ```sql
-   SELECT 
-       DATEPART(MONTH, SaleDate) AS Month,
-       SUM(Sales) AS Monthly_Sales
-   FROM 
-       AdidasSales
-   GROUP BY 
-       DATEPART(MONTH, SaleDate)
-   ORDER BY 
-       Month;
+ SELECT d.MonthName, 
+       d.Year, 
+       SUM(s.[Total Sales]) AS MonthlySales
+FROM ['Data_Sales _Adidas] s
+JOIN DateTable d ON s.[Invoice Date] = d.Invoicedate
+GROUP BY d.MonthName, 
+         d.Year
+ORDER BY MonthlySales DESC;
    ```
 
 #### 3. Regional Performance
