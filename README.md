@@ -52,6 +52,7 @@ Using SQL Server, I performed data analysis to uncover insights on sales trends,
 ### Key SQL Queries
 
 #### 1. Top Performing Products
+ ```sql
  SELECT
     Product,
     SUM([Units Sold]) AS Total_Units_Sold
@@ -63,6 +64,7 @@ ORDER BY
     Total_Units_Sold DESC;
 
 #### 2. Monthly Sales Trends
+  ```sql
  SELECT d.MonthName, 
        d.Year, 
        SUM(s.[Total Sales]) AS MonthlySales
