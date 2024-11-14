@@ -1,166 +1,213 @@
 # Adidas-Sales-Analysis-Project
 
-Creating a well-documented portfolio with a tailored focus on your skills and the analysis insights from the Adidas sales dataset will show potential clients or employers the depth of your expertise in data analysis, SQL, and Power BI. Here’s how you could structure the content for your portfolio website and GitHub.
+Here’s a comprehensive GitHub and portfolio documentation template that incorporates all the steps for cleaning, analyzing, and visualizing Adidas sales data with Excel, SQL, and Power BI. This template is structured for clarity, showcasing your process and insights to prospective employers or clients.
 
 ---
 
-### **Portfolio Website Content**
+### **GitHub Documentation**
+
+**Repository Title**: *Adidas Sales Analysis Project*
 
 ---
 
-#### **Project Title**: Adidas Sales Analysis
+#### **README.md**
 
-**Project Overview**:
-The Adidas Sales Analysis project is a comprehensive deep dive into Adidas's sales data, utilizing SQL Server for data cleaning and transformation, and Power BI for visualization and insights. This analysis provides actionable insights into sales trends, product performance, customer behavior, and profitability, equipping Adidas with data-driven decision-making tools to enhance business strategy.
+```markdown
+# Adidas Sales Analysis Project
 
----
-
-**Objective**:
-To analyze sales, customer demographics, and profitability data, identify key patterns and trends, and visualize findings in an interactive, easy-to-understand Power BI dashboard.
+This project provides a full analysis of Adidas sales data to derive actionable insights using Excel, SQL Server, and Power BI. Each tool is utilized in a specific capacity: Excel for data cleaning and transformation, SQL Server for in-depth analysis, and Power BI for interactive visualization. This project demonstrates expertise in data cleaning, ETL processes, SQL queries, and data visualization to uncover trends in product performance, customer demographics, and regional sales.
 
 ---
 
-#### **Key Skills and Tools Used**
-- **SQL Server**: Data cleaning, transformation, and querying.
-- **Power BI**: Data visualization and interactive reporting.
-- **Data Analysis**: Sales, customer, and profitability insights.
-- **Excel**: Initial data processing and manipulation.
+## Project Overview
+
+- **Data Source**: Adidas Sales Dataset
+- **Tools**: Excel (Power Query), SQL Server, Power BI
+- **Key Objectives**:
+  - Clean and transform raw sales data
+  - Perform time-based and product-based sales analysis
+  - Visualize trends for actionable insights in sales, marketing, and inventory management
 
 ---
 
-### **Project Breakdown**
+## Table of Contents
 
-#### **1. Data Preparation**
-   - Imported and cleaned datasets in SQL Server.
-   - Merged multiple tables to create unified datasets for sales, customer demographics, product details, and regional information.
-   - Created calculated fields for metrics like **Average Operating Margin**, **Inventory Turnover Ratio**, and **Customer Lifetime Value (CLV)**.
+1. [Data Cleaning in Excel Power Query](#data-cleaning-in-excel-power-query)
+2. [SQL Server Analysis](#sql-server-analysis)
+3. [Power BI Visualization](#power-bi-visualization)
+4. [Insights and Findings](#insights-and-findings)
 
-**SQL Example**:
-```sql
-SELECT 
-    Product,
-    SUM(Sales) AS Total_Sales,
-    AVG(Operating_Margin) AS Avg_Operating_Margin,
-    (SUM(Sales) / SUM(Inventory)) AS Inventory_Turnover_Ratio
-FROM 
-    Sales_Data
-GROUP BY 
-    Product
-ORDER BY 
-    Total_Sales DESC;
+---
+
+## Data Cleaning in Excel Power Query
+
+### Steps:
+1. **Load the Data**: Imported the dataset into Excel and launched Power Query for transformations.
+2. **Remove Duplicates**: Cleaned the data by removing any duplicate entries to ensure data integrity.
+3. **Handle Missing Values**: Used fill-down and replacement methods to manage null values.
+4. **Filter Unnecessary Data**: Removed non-essential columns to streamline the dataset.
+5. **Rename Columns**: Standardized column names for compatibility with SQL and Power BI.
+6. **Unpivot Data for Time Analysis**: Unpivoted month-based columns to prepare for time-series analysis.
+7. **Create Custom Columns**: Generated new columns to calculate profit margin and extract quarters.
+
+   *Code Example for Unpivoting in Power Query*:
+   ```excel
+   // Unpivot selected columns for month-based sales data
+   Transform > Unpivot Columns
+   ```
+
+8. **Export to SQL**: Saved the cleaned data in CSV format and imported it into SQL Server.
+
+---
+
+## SQL Server Analysis
+
+In SQL Server, I performed comprehensive data analysis on the cleaned dataset to derive insights on sales trends, product performance, and customer demographics.
+
+### Key Queries
+
+#### 1. Top Performing Products
+   ```sql
+   SELECT 
+       Product,
+       SUM(Sales) AS Total_Sales,
+       SUM(Operating_Profit) AS Total_Profit
+   FROM 
+       AdidasSales
+   GROUP BY 
+       Product
+   ORDER BY 
+       Total_Sales DESC;
+   ```
+
+#### 2. Monthly Sales Trends
+   ```sql
+   SELECT 
+       DATEPART(MONTH, SaleDate) AS Month,
+       SUM(Sales) AS Monthly_Sales
+   FROM 
+       AdidasSales
+   GROUP BY 
+       DATEPART(MONTH, SaleDate)
+   ORDER BY 
+       Month;
+   ```
+
+#### 3. Regional Performance
+   ```sql
+   SELECT 
+       Region,
+       SUM(Sales) AS Regional_Sales,
+       AVG(Operating_Margin) AS Avg_Operating_Margin
+   FROM 
+       AdidasSales
+   GROUP BY 
+       Region
+   ORDER BY 
+       Regional_Sales DESC;
+   ```
+
+---
+
+## Power BI Visualization
+
+With Power BI, I created an interactive dashboard to visualize the sales data, allowing for dynamic insights into Adidas’s performance across various dimensions.
+
+### Visualizations
+
+1. **Sales by Product**: A bar chart showing the total sales and profit by product category to highlight top-performing items.
+2. **Monthly Sales Trend**: A line graph depicting monthly sales trends to identify seasonality and peak periods.
+3. **Regional Sales Performance**: A map visualization showing sales distribution across regions for geographic insights.
+4. **Profit Margin by Product**: A scatter plot to identify the relationship between profit margin and product sales.
+
+*Screenshot of Power BI Dashboard*
+
+![Power BI Dashboard Screenshot](./assets/power_bi_dashboard.png)
+
+---
+
+## Insights and Findings
+
+Based on the analysis in SQL Server and visualizations in Power BI, here are some key insights:
+
+1. **Top Products**: Products A, B, and C emerged as top sellers with high profitability, indicating potential for focused marketing.
+2. **Seasonality in Sales**: Sales peak in Q2 and Q4, likely due to seasonal promotions and holiday purchases.
+3. **Regional Differences**: Region X recorded the highest sales, while Region Y shows a strong growth trend. This can inform region-specific marketing strategies.
+4. **Profit Margins**: Some low-sales products showed high profit margins, suggesting opportunities for targeted upselling strategies.
+
+---
+
+## Files in Repository
+
+- `Adidas Sales Dataset.xlsx`: Raw dataset used for the analysis.
+- `Data Cleaning Script.txt`: Excel Power Query script for data cleaning and transformation.
+- `SQL Queries.sql`: SQL Server queries for data analysis.
+- `Power BI Dashboard.pbix`: Power BI file for interactive visualizations.
+- `README.md`: Project documentation.
+
+---
+
+## How to Run This Project
+
+1. Open `Adidas Sales Dataset.xlsx` in Excel and review the data structure.
+2. Follow the Power Query steps to clean and transform data.
+3. Use SQL Server to load the cleaned dataset and run the queries provided.
+4. Open `Power BI Dashboard.pbix` in Power BI to interact with the visualizations.
+
+---
+
+## Conclusion
+
+This project demonstrates an end-to-end analysis workflow, transforming raw sales data into actionable insights with Excel, SQL, and Power BI. This approach is applicable for businesses seeking to leverage data for strategic decision-making across sales, marketing, and inventory management.
+
 ```
 
 ---
 
-#### **2. Power BI Dashboard Development**
-   - Developed a Power BI dashboard with interactive features, allowing dynamic filtering by region, product category, and time period.
-   - Created **KPI Cards** for quick insights on Total Sales, Average Order Value, and Total Units Sold.
-   - Generated visualizations for easy interpretation of trends, customer segmentation, and profitability.
+### **Portfolio Documentation (Hosted on GitHub Pages)**
+
+#### **Project Title**: *Adidas Sales Data Analysis: An End-to-End Approach with Excel, SQL, and Power BI*
+
+#### **Project Summary**
+
+In this project, I conducted a comprehensive analysis of Adidas sales data using Excel, SQL Server, and Power BI. This project demonstrates my ability to clean, analyze, and visualize large datasets, providing actionable insights into sales trends, customer demographics, and product performance.
 
 ---
 
-### **Core Analyses & Visual Insights**
+#### **Steps**
 
-#### **Sales Trend Analysis**
-   - **Visualization**: Line Chart
-   - **Insight**: Monthly sales trends revealed seasonality in customer demand, with peak sales periods aligning with major sporting events and holidays. This insight can guide inventory planning and promotional campaigns.
+1. **Data Cleaning with Excel Power Query**: 
+   - Removed duplicates, filled missing values, filtered columns, and unpivoted data to prepare for analysis.
 
-#### **Profitability Analysis by Product**
-   - **Visualization**: Heat Map
-   - **Insight**: Identified high-profit margin products within each category. Products with low margins but high sales indicate areas where pricing adjustments could enhance profitability.
+2. **In-Depth Analysis with SQL Server**:
+   - Using SQL Server, I explored top-selling products, seasonal sales trends, and regional performance to highlight sales opportunities and challenges.
 
-#### **Top 10 Products by Sales**
-   - **Visualization**: Bar Chart
-   - **Insight**: Highlighted the top 10 products based on total sales, showing significant variations in product performance across regions. This analysis helps in regional-specific marketing strategies.
-
-#### **Customer Demographic Analysis**
-   - **Visualization**: Donut Chart
-   - **Insight**: Breakdowns by age and gender uncovered the target demographic with the highest purchasing power. These insights inform Adidas’s advertising and promotional strategies.
-
-#### **Inventory Turnover Analysis**
-   - **Visualization**: Scatter Plot
-   - **Insight**: Showcased inventory turnover rates by product, helping identify popular items and optimize stock levels to prevent overstock or understock scenarios.
+3. **Data Visualization in Power BI**:
+   - Created interactive dashboards to visualize findings, allowing dynamic filtering for detailed insights by product and region.
 
 ---
 
-### **Conclusion**
+#### **Key Findings**
 
-This analysis demonstrates how data insights can drive improved business outcomes. Leveraging SQL Server and Power BI enabled a full-spectrum view of sales performance, customer engagement, and product profitability, empowering Adidas to make more data-informed decisions.
-
----
-
----
-
-### **GitHub Repository Content**
-
-**Repository Name**: `Adidas-Sales-Analysis-Portfolio`
-
-#### **README.md**
-
-**Adidas Sales Analysis with SQL Server and Power BI**
+1. **Top Performers**: Identified high-revenue products and regions that can benefit from targeted promotions.
+2. **Seasonal Patterns**: Sales peak during Q2 and Q4, indicating opportunities for strategic seasonal marketing.
+3. **Regional Growth**: Identified regions with strong sales growth for targeted expansion.
+4. **Profitability Insights**: Uncovered products with high-profit margins that could benefit from upselling.
 
 ---
 
-**Project Description**:
-This repository contains the SQL scripts, data preparation processes, and Power BI files for a comprehensive sales analysis project on Adidas's sales data. This analysis examines sales trends, customer behavior, and profitability metrics, using SQL Server for data transformation and Power BI for visualization.
+#### **Project Files**
 
-**Project Structure**:
-- **Data**: Contains sample data and schema for loading into SQL Server.
-- **SQL Scripts**: All SQL scripts used for data preparation and analysis.
-- **Power BI Dashboard**: `.pbix` file showcasing the interactive dashboard with detailed insights.
-- **Documentation**: Analysis explanations and methodology used.
-
-**Skills Highlighted**:
-- SQL Server: Data transformation, calculated fields, and data aggregation.
-- Power BI: Visualization, KPI creation, and dashboard interactivity.
-- Data Analysis: Sales, profitability, and customer segmentation.
+- **Data Cleaning Scripts**: Power Query steps for data preparation.
+- **SQL Analysis Scripts**: SQL queries used for deriving insights.
+- **Power BI Dashboard**: A dynamic, interactive dashboard for exploring findings.
 
 ---
 
-#### **Key Files**
+#### **Conclusion**
 
-- **Data Preparation Scripts**: `/scripts/data_preparation.sql`
-  - SQL code for cleaning, merging, and transforming raw datasets.
-- **Analysis Queries**: `/scripts/analysis_queries.sql`
-  - Queries for deriving insights, such as top products, regional sales distribution, and customer demographics.
-- **Power BI Report**: `/reports/adidas_sales_analysis.pbix`
-  - The interactive Power BI report file containing all visuals and KPIs.
+This project showcases a complete data analysis workflow, highlighting how data cleaning, SQL queries, and data visualizations can drive business decisions in sales and marketing. The analysis provides a clear, structured approach for transforming raw data into strategic insights, making it a strong portfolio project for data analysis roles.
 
-#### **Visuals and Insights**
+--- 
 
-1. **Sales Overview**: Total Sales, Operating Profit, Average Order Value, Units Sold.
-2. **Sales Trends**: Time-series analysis of sales to identify high-demand periods.
-3. **Top Products and Profitability**: Top-selling products and their profit margins.
-4. **Customer Insights**: Segmentation by demographics and purchase frequency.
-5. **Inventory Analysis**: Product demand and inventory turnover.
-
-#### **Getting Started**
-
-1. **Clone Repository**:
-   ```bash
-   git clone https://github.com/YourGitHubUsername/Adidas-Sales-Analysis-Portfolio.git
-   ```
-
-2. **Database Setup**:
-   - Import the data into SQL Server.
-   - Run the SQL scripts in the `scripts` folder to prepare and analyze data.
-
-3. **Power BI**:
-   - Open `adidas_sales_analysis.pbix` in Power BI Desktop.
-   - Review and interact with the visuals to gain insights.
-
-#### **Insights & Recommendations**
-
-- **Trend Analysis**: Monthly and quarterly trends to plan stock levels and promotional events.
-- **Customer Demographics**: Identify and target high-value segments.
-- **Profitability**: Focus on high-margin products and adjust pricing for lower-margin items.
-- **Inventory Management**: Optimize stock based on product demand and turnover rates.
-
-#### **License**: MIT
-
-#### **Contact**
-For further inquiries, reach out via [YourEmail@example.com](mailto:YourEmail@example.com) or LinkedIn.
-
----
-
-This documentation for your portfolio website and GitHub will clearly convey your expertise and thought process, providing a robust, professional showcase of your data analytics project.
+This documentation structure will clearly present your approach, findings, and technical skills across platforms, making it easy to understand and compelling for your audience.
