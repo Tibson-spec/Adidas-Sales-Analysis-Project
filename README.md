@@ -61,7 +61,7 @@ GROUP BY
     Product
 ORDER BY 
     Total_Units_Sold DESC;
-```
+
 #### 2. Monthly Sales Trends
  SELECT d.MonthName, 
        d.Year, 
