@@ -99,19 +99,19 @@ In Power BI, I created an interactive dashboard to visualize Adidas’s sales da
 
 ### Key Visualizations
 
-1. **Sales by Product**: Bar chart showing total sales and profit by product category.
-2. **Monthly Sales Trend**: Line graph illustrating sales trends over months for seasonality insights.
-3. **Regional Sales Performance**: Map visualization for geographic sales distribution.
-4. **Profit Margin by Product**: Scatter plot showing profit margin across different products.
+1. **Sales by Product**: Bar chart showing total sales by product category.
+2. Monthly Sales Trend: Area chart illustrating sales trends over months and quarters for seasonality insights.
+3. Regional Sales Performance: Map visualization for geographic sales distribution.
+4. Profit Margin by Product: Line and clustered column chart showing profit margin and total profit across different products.
 
 ---
 
 ## Key Findings
 
-1. **Top Products**: Certain product categories emerged as high-revenue drivers, offering opportunities for strategic promotions.
-2. **Seasonality in Sales**: Peaks in Q2 and Q4 indicate opportunities for holiday and seasonal marketing.
-3. **Regional Differences**: Certain regions show higher growth rates, suggesting potential for regional-focused strategies.
-4. **Profit Margins**: Products with higher profit margins but lower sales volumes may benefit from targeted upselling.
+1. Top Products: Certain product categories emerged as high-revenue drivers, offering opportunities for strategic promotions.
+2. Seasonality in Sales: Peaks in Q3 and Q4 indicate opportunities for holiday and seasonal marketing.
+3. Regional Differences: Certain regions show higher growth rates, suggesting potential for regional-focused strategies.
+4. Profit Margins: Products with higher profit margins but lower sales volumes may benefit from targeted upselling.
 
 ---
 
@@ -131,4 +131,3 @@ This project demonstrates a full data analysis pipeline, from data cleaning and 
 
 ---
 
-Copy this documentation into GitHub (README.md) or your portfolio website to effectively present your project, skills, and insights in data analysis.
