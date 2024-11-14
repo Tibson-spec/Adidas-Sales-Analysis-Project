@@ -62,7 +62,7 @@ GROUP BY
     Product
 ORDER BY 
     Total_Units_Sold DESC;
-
+ ```
 #### 2. Monthly Sales Trends
   ```sql
  SELECT d.MonthName, 
@@ -77,16 +77,18 @@ ORDER BY MonthlySales DESC;
 
 #### 3. Regional Performance
    ```sql
-   SELECT 
-       Region,
-       SUM(Sales) AS Regional_Sales,
-       AVG(Operating_Margin) AS Avg_Operating_Margin
-   FROM 
-       AdidasSales
-   GROUP BY 
-       Region
-   ORDER BY 
-       Regional_Sales DESC;
+  SELECT 
+   Region,
+   SUM([Units Sold]) AS TotalUnitSold,
+   SUM([Total Sales]) AS TotalSalesAmount
+FROM 
+    ['Data_Sales _Adidas] s
+JOIN Location l ON s.[Location Key] = l.LocationKey
+GROUP BY 
+    Region
+ORDER BY 
+     TotalSalesAmount DESC;
+
    ```
 
 ---
