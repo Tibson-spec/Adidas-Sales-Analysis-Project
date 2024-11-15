@@ -98,9 +98,10 @@ ORDER BY
 
 In Power BI, I created an interactive dashboard to visualize Adidas’s sales data, enabling dynamic filtering and deep dives into key metrics.
 
-### Key Visualizations
-![Image Alt](https://github.com/Tibson-spec/Sample-Superstore-Dataset-Project/blob/main/Monthly%20and%20quarterly%20Sales%20Trend.png?raw=true)
+## Adidas sales overview dashboard
+![Image Alt]https://github.com/Tibson-spec/Adidas-Sales-Analysis-Project/blob/main/sales%20over.PNG?raw=true
 
+### Key Visualizations
 1. Sales by Product: Bar chart showing total sales by product category.
 2. Monthly Sales Trend: Area chart illustrating sales trends over months and quarters for seasonality insights.
 3. Regional Sales Performance: Map visualization for geographic sales distribution.
