@@ -17,6 +17,7 @@ This project showcases a comprehensive analysis of Adidas sales data, leveraging
 - [Power BI Visualization](#power-bi-visualization)
     - [Key Visualizations](#key-visualizations)
     - [Key Findings](#key-findings)
+    - [Recommendation](#Key-recommendation).
     - [Project Files](#project-files)
     - [Conclusion](#conclusion)
 
@@ -109,12 +110,19 @@ In Power BI, I created an interactive dashboard to visualize Adidas’s sales da
 ## Key Findings
 
 1. Top Products: Certain product categories emerged as high-revenue drivers, offering opportunities for strategic promotions.
+
 2. Seasonality in Sales: Peaks in Q3 and Q4 indicate opportunities for holiday and seasonal marketing.
+
 3. Seasonal Trends: Identified Q3 and Q4 peak sales months, revealing key times of demand for Adidas products.
+
 4. Quarterly Patterns: Sales consistently spiked in Q3, indicating a high-performing season – a strategic period for promotions and inventory management.
+
 5. Year-Over-Year Growth: Observed steady growth in total sales, with notable increases in 2021.
+
 6. Regional Performance: Regions like North America and Europe lead in overall sales, with North America showing the highest growth rates.
+
 Emerging markets have lower but gradually increasing sales, indicating potential growth with tailored marketing efforts.
+
 7. Profit Margins: Products with higher profit margins but lower sales volumes may benefit from targeted upselling.
 
 ---
