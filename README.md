@@ -134,7 +134,7 @@ Impact: Boosts profitability without the need to increase high-cost marketing, b
 
 ## Project Files
 
-- `[Adidas Sales Dataset.xlsx]`: Raw dataset used for the analysis.
+- [Adidas Sales Dataset.xlsx](Raw dataset used for the analysis).
 - `Data Cleaning Script.txt`: Excel Power Query script for data cleaning and transformation.
 - `SQL Queries.sql`: SQL Server queries for analysis.
 - `Power BI Dashboard.pbix`: Power BI file with interactive dashboards.
