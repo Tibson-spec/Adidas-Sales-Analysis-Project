@@ -121,25 +121,33 @@ Emerging markets have lower but gradually increasing sales, indicating potential
 
 ## Recommendations
 - Optimize Marketing for Top Products:
+
 Action: Increase marketing investments for high-performing products, especially in regions where they are most popular.
+
 Impact: Enhances revenue and profit through the promotion of products with proven customer demand and profitability.
 
+
 - Leverage Seasonality in Sales:
+
 Action: Plan promotional campaigns around Q3 and Q4 to capitalize on seasonal demand. Introduce seasonal discounts or limited-edition products during peak sales periods.
+
 Impact: Maximizes sales during high-demand periods and drives revenue growth by targeting customer purchase patterns.
 
+
 - Strategic Upselling of High-Margin, Low-Volume Products:
+
 Action: Implement upselling techniques, such as bundling or targeted promotions, for products with higher profit margins but lower sales.
+
 Impact: Boosts profitability without the need to increase high-cost marketing, by leveraging existing high-margin items.
+
 
 ## Project Files
 
 - [Adidas Sales Dataset.xlsx](Raw dataset used for the analysis).
-- [https://github.com/Tibson-spec/Adidas-Sales-Analysis Project/blob/main/Adidas%20Sales%20Dataset(Personal%20Projects)/Adidas%20analysis(portfolio%20p).sql](Excel Power Query script for data cleaning and transformation).
+- Excel Power Query script for data cleaning and transformation: Click 👉[here](https://drive.google.com/file/d/1uIO7j8wKBYpNeZq6XTf_AGe7_B3NbxvM/view?usp=sharing)👈
 - `SQL Queries.sql`: SQL Server queries for analysis.
 - `Power BI Dashboard.pbix`: Power BI file with interactive dashboards.
 - `README.md`: Project documentation.
-Click 👉[here](https://drive.google.com/file/d/1uIO7j8wKBYpNeZq6XTf_AGe7_B3NbxvM/view?usp=sharing)👈
 ---
 
 ## Conclusion
