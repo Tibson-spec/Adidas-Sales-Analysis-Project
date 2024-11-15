@@ -106,6 +106,8 @@ In Power BI, I created an interactive dashboard to visualize Adidas’s sales da
 ![Image Alt](https://github.com/Tibson-spec/Adidas-Sales-Analysis-Project/blob/main/sales%20by%20product.PNG?raw=true)
 
 2. Monthly Sales Trend: Area chart illustrating sales trends over months and quarters for seasonality insights.
+![Image Alt](https://github.com/Tibson-spec/Adidas-Sales-Analysis-Project/blob/main/Area%20chart%20adidas.PNG?raw=true)
+
 3. Regional Sales Performance: Map visualization for geographic sales distribution.
 4. Profit Margin by Product: Line and clustered column chart showing profit margin and total profit across different products.
 
