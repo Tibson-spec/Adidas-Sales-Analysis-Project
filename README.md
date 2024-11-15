@@ -119,9 +119,7 @@ In Power BI, I created an interactive dashboard to visualize Adidas’s sales da
 
 5. Year-Over-Year Growth: Observed steady growth in total sales, with notable increases in 2021.
 
-6. Regional Performance: Regions like North America and Europe lead in overall sales, with North America showing the highest growth rates.
-
-Emerging markets have lower but gradually increasing sales, indicating potential growth with tailored marketing efforts.
+6. Regional Performance: Regions like North America and Europe lead in overall sales, with North America showing the highest growth rates. Emerging markets have lower but gradually increasing sales, indicating potential growth with tailored marketing efforts.
 
 7. Profit Margins: Products with higher profit margins but lower sales volumes may benefit from targeted upselling.
 
