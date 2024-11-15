@@ -143,11 +143,10 @@ Impact: Boosts profitability without the need to increase high-cost marketing, b
 
 ## Project Files
 
-- [Raw dataset used for the analysis](https://docs.google.com/spreadsheets/d/10lAnAcOF-vUhC3Yuo3-02HI8MliZqsyP/edit?usp=sharing&ouid=114563417088593971734&rtpof=true&sd=true).
+- [Raw dataset used for the analysis](https://docs.google.com/spreadsheets/d/1cfgPIvtsAYt78ztIvDlWpAmk8iRH0dW7/edit?usp=sharing&ouid=114563417088593971734&rtpof=true&sd=true).
 - Excel Power Query script for data cleaning and transformation: Click 👉[here](https://docs.google.com/spreadsheets/d/15c8CIPmSwQA2fjbo7jfxajfRMHQEXj2S/edit?usp=sharing&ouid=114563417088593971734&rtpof=true&sd=true)👈
-- SQL Server queries for analysis: Click 👉[here](https://drive.google.com/file/d/1qvlVis0epz4ep-_MmyXhyCIHza8hLEek/view?usp=sharing)
-- Power BI file with interactive dashboards: download 👉[here](https://drive.google.com/file/d/1OVph3uerhHWEDWxhLEca9FzyLzHsK2Yh/view?usp=sharing)
-- `README.md`: Project documentation.
+- SQL Server queries for analysis: Click 👉[here](https://drive.google.com/file/d/1qvlVis0epz4ep-_MmyXhyCIHza8hLEek/view?usp=sharing)👈
+- Power BI file with interactive dashboards: download 👉[here](https://drive.google.com/file/d/1OVph3uerhHWEDWxhLEca9FzyLzHsK2Yh/view?usp=sharing)👈
 ---
 
 ## Conclusion
