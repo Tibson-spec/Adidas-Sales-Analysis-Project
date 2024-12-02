@@ -111,7 +111,7 @@ In Power BI, I created an interactive dashboard to visualize Adidas’s sales da
 3. Regional Sales Performance: Map visualization for geographic sales distribution.
 ![Image Alt](https://github.com/Tibson-spec/Adidas-Sales-Analysis-Project/blob/main/Map%20adidas.PNG?raw=true)
 
-4. Profit Margin by Product: Line and clustered column chart showing profit margin and total profit across different products.
+4. Profit Margin by Product: Line and clustered column chart showing profit margin and total profit.
 ![Image Alt](https://github.com/Tibson-spec/Adidas-Sales-Analysis-Project/blob/main/profit%20margin%20ad.PNG?raw=true)
 ---
 
